@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         // Aquí puedes colocar cualquier widget que desees como cuerpo de la pantalla
         child: Center(
-          child: Text('Casa de Dios'),
+          child: Text('Contenido de la pantalla de inicio'),
         ),
       ),
     );
