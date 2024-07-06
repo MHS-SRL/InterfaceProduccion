@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         children: <Widget>[
           Container(
             width: 250, // Ancho del menú
-            color: Colors.grey[200], // Color de fondo del menú
+            color: Color(0xFFD2B48C), // Color de fondo del menú
             child: ListView(
               padding: const EdgeInsets.all(8.0),
               children: DrawerItems.getDrawerItems(context), // Usa la función estática
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 20), // Espacio superior
+                const SizedBox(height: 10), // Espacio superior
                 const Text(
                   'Resumen de Trabajo:',
                   style: TextStyle(
