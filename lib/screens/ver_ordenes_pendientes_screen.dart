@@ -5,9 +5,9 @@ class VerOrdenesPendientesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('verordenespendientes'),
+        title: const Text('Ver Ordenes Pendientes'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Pantalla para Ver Ordenes Pendientes'),
       ),
     );

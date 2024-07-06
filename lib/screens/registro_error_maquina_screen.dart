@@ -5,9 +5,9 @@ class RegistroErrorMaquinaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('registroerrordemaquina'),
+        title: const Text('Registro Error de Maquina'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Pantalla Registro de Maquina'),
       ),
     );

@@ -5,9 +5,9 @@ class ReportesNocturnosScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('reportesnocturnos'),
+        title: Text('Reportes Nocturnos'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Pantalla para Reportes Nocturnos'),
       ),
     );

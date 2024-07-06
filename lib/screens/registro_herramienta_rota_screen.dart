@@ -5,10 +5,10 @@ class RegistroHerramientaRotaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('registroherramientarota'),
+        title: const Text('Registro Herramienta Rota'),
       ),
-      body: Center(
-        child: Text('Pantalla de Registro Herramienta Rota '),
+      body: const Center(
+        child: Text('Pantalla de Registro Herramienta Rota'),
       ),
     );
   }

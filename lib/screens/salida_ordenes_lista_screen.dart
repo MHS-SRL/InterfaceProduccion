@@ -5,9 +5,9 @@ class SalidaOrdenesListaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('salidaordenes'),
+        title: const Text('Salida Ordenes'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Pantalla para Salida de Ordenes'),
       ),
     );

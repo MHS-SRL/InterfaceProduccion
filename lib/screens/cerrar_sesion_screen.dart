@@ -5,9 +5,9 @@ class CerrarSesionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('cerrarsesion'),
+        title: const Text('Cerrar Sesion'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Pantalla para Cerrar Sesion'),
       ),
     );

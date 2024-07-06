@@ -5,9 +5,9 @@ class SeguimientoDeOrdenScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('seguimientoorden'),
+        title: const Text('Seguimiento Orden'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Pantalla para Seguimiento de Orden'),
       ),
     );

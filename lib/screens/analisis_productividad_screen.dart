@@ -5,9 +5,9 @@ class AnalisisDeProductividadScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('analisisdeproductividad'),
+        title: const Text('Analisis de Productividad'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Pantalla para Analisis de Productividad'),
       ),
     );

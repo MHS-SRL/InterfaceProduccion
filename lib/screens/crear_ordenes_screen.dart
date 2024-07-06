@@ -5,9 +5,9 @@ class CrearOrdenesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Crear Ordenes'),
+        title: const Text('Crear Ordenes'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Pantalla para Crear Ordenes'),
       ),
     );
