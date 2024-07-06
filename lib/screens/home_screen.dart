@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'drawer_items.dart'; // Importa el nuevo archivo creado
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -7,11 +8,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: Container(
-        // Aquí puedes colocar cualquier widget que desees como cuerpo de la pantalla
-        child: Center(
-          child: Text('Contenido de la pantalla de inicio'),
-        ),
+      body: ListView(
+        padding: EdgeInsets.all(8.0),
+        children:
+            DrawerItems.getDrawerItems(context), // Usa la función estática
       ),
     );
   }
