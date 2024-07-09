@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '/widgets/input_decoration.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +12,15 @@ class LoginScreen extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         child: Stack(
-          children: [
-            _cajaPurpura(size),
-            _iconoPersona(),
-            _loginForm(context)
-          ],
+          children: [_cajaPurpura(size), _iconoPersona(), _loginForm(context)],
+        ),
+      ),
+      bottomNavigationBar: const Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Text(
+          '2024 © Todos los derechos reservados Mercado High Services Srl',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 12),
         ),
       ),
     );
@@ -47,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'Login',
-                  style: Theme.of(context).textTheme.headlineLarge,
+                  style: Theme.of(context).textTheme.headline4,
                 ),
                 const SizedBox(height: 30),
                 Form(
@@ -148,18 +152,18 @@ class LoginScreen extends StatelessWidget {
       height: size.height * 0.4,
       child: Stack(
         children: [
-          Positioned(child: _burbuja(), top: 90, left: 30),
-          Positioned(child: _burbuja(), top: -40, left: -30),
-          Positioned(child: _burbuja(), top: 50, left: 275),
-          Positioned(child: _burbuja(), top: -50, right: -20),
-          Positioned(child: _burbuja(), bottom: 15, left: 200),
-          Positioned(child: _burbuja(), bottom: -50, left: 10),
-          Positioned(child: _burbuja(), bottom: 120, right: 30),
-          Positioned(child: _burbuja(), bottom: 70, left: 425),
-          Positioned(child: _burbuja(), bottom: -10, right: 10),
-          Positioned(child: _burbuja(), top: 50, right: 425),
-          Positioned(child: _burbuja(), top: 5, right: 200),
-          Positioned(child: _burbuja(), bottom: 15, right: 250),
+          Positioned(top: 90, left: 30, child: _burbuja()),
+          Positioned(top: -40, left: -30, child: _burbuja()),
+          Positioned(top: 50, left: 275, child: _burbuja()),
+          Positioned(top: -50, right: -20, child: _burbuja()),
+          Positioned(bottom: 15, left: 200, child: _burbuja()),
+          Positioned(bottom: -50, left: 10, child: _burbuja()),
+          Positioned(bottom: 120, right: 30, child: _burbuja()),
+          Positioned(bottom: 70, left: 425, child: _burbuja()),
+          Positioned(bottom: -10, right: 10, child: _burbuja()),
+          Positioned(top: 50, right: 425, child: _burbuja()),
+          Positioned(top: 5, right: 200, child: _burbuja()),
+          Positioned(bottom: 15, right: 250, child: _burbuja()),
         ],
       ),
     );

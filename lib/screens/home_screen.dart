@@ -19,7 +19,8 @@ class HomeScreen extends StatelessWidget {
             color: Color(0xFFD2B48C), // Color de fondo del menú
             child: ListView(
               padding: const EdgeInsets.all(8.0),
-              children: DrawerItems.getDrawerItems(context), // Usa la función estática
+              children: DrawerItems.getDrawerItems(
+                  context), // Usa la función estática
             ),
           ),
           Expanded(
@@ -36,19 +37,24 @@ class HomeScreen extends StatelessWidget {
                     color: Color(0xFFD2B48C),
                   ),
                 ),
-                const SizedBox(height: 45), // Espacio entre el título y el gráfico de pastel
+                const SizedBox(
+                    height:
+                        45), // Espacio entre el título y el gráfico de pastel
                 Expanded(
                   child: LayoutBuilder(
                     builder: (context, constraints) {
                       return SizedBox(
                         width: constraints.maxWidth,
-                        height: constraints.maxHeight / 1.5, // Ajusta la altura del gráfico de pastel
+                        height: constraints.maxHeight /
+                            1.5, // Ajusta la altura del gráfico de pastel
                         child: const CustomPieChart(),
                       );
                     },
                   ),
                 ),
-                const SizedBox(height: 20), // Espacio entre el gráfico de pastel y la leyenda
+                const SizedBox(
+                    height:
+                        20), // Espacio entre el gráfico de pastel y la leyenda
                 const CustomLegend(), // Widget de la leyenda
                 const SizedBox(height: 20), // Espacio inferior
               ],

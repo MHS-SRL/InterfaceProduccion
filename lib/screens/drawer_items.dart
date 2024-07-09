@@ -70,14 +70,14 @@ class DrawerItems {
               ),
               ListTile(
                 leading: const Icon(Icons.nightlight_round),
-                title:const Text('Reportes Nocturnos'),
+                title: const Text('Reportes Nocturnos'),
                 onTap: () {
                   Navigator.pushNamed(context, 'reportes_nocturnos');
                 },
               ),
               ListTile(
-                leading:const Icon(Icons.exit_to_app),
-                title:const Text('Cerrar Sesión'),
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text('Cerrar Sesión'),
                 onTap: () {
                   Navigator.pushNamed(context, 'cerrar_sesion');
                 },
