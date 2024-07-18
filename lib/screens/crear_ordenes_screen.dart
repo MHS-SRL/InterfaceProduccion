@@ -315,7 +315,6 @@ class CrearOrdenesScreen extends StatelessWidget {
                         icon: const Icon(Icons.save, size: 50),
                         onPressed: () {
                           // Lógica para guardar
-                          print('Guardar');
                         },
                       ),
                       const Text('Guardar'),
@@ -328,7 +327,6 @@ class CrearOrdenesScreen extends StatelessWidget {
                         onPressed: () {
                           // Lógica para cancelar
                           Navigator.pop(context);
-                          print('Cancelar');
                         },
                       ),
                       const Text('Cancelar'),
