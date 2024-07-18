@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       routes: {
-        'login': (_) => LoginScreen(),
-        'home': (_) => HomeScreen(),
-        'crear_ordenes': (_) => CrearOrdenesScreen(),
+        'login': (_) => const LoginScreen(),
+        'home': (_) => const HomeScreen(),
+        'crear_ordenes': (_) => const CrearOrdenesScreen(),
         'ver_ordenes_pendientes': (_) => VerOrdenesPendientesScreen(),
         'seguimiento_orden': (_) => SeguimientoDeOrdenScreen(),
         'analisis_productividad': (_) => AnalisisDeProductividadScreen(),

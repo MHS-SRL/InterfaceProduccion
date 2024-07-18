@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'drawer_items.dart'; // Importa el archivo que contiene DrawerItems
+import '/screens/orden_creada_screen.dart';
 
 class CrearOrdenesScreen extends StatelessWidget {
   const CrearOrdenesScreen({super.key});
@@ -311,12 +312,24 @@ class CrearOrdenesScreen extends StatelessWidget {
                 children: [
                   Column(
                     children: [
+
                       IconButton(
                         icon: const Icon(Icons.save, size: 50),
                         onPressed: () {
                           // Lógica para guardar
                         },
                       ),
+
+                    IconButton(
+                      icon: const Icon(Icons.save, size: 50),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const OrdenCreadaScreen()),
+                        );
+                      },
+                    ),
+
                       const Text('Guardar'),
                     ],
                   ),
