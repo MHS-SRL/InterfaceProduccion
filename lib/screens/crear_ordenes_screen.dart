@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'drawer_items.dart'; // Importa el archivo que contiene DrawerItems
 import '/screens/orden_creada_screen.dart';
+import '/screens/home_screen.dart';
 
 class CrearOrdenesScreen extends StatelessWidget {
   const CrearOrdenesScreen({super.key});
@@ -329,8 +330,12 @@ class CrearOrdenesScreen extends StatelessWidget {
                       IconButton(
                         icon: const Icon(Icons.cancel, size: 50),
                         onPressed: () {
-                          // Lógica para cancelar
-                          Navigator.pop(context);
+                          // Cambiar la lógica aquí
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => const HomeScreen()),
+                            (route) => false,
+                          );
                           print('Cancelar');
                         },
                       ),
