@@ -175,7 +175,7 @@ class OrdenCreadaScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 110),
             const Center(
               child: Text(
                 '2023 © Todos los derechos reservados Mercado Hig Services Srl',

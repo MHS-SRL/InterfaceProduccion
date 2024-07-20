@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'drawer_items.dart'; // Importa el archivo que contiene DrawerItems
 import '/screens/orden_creada_screen.dart';
+import '/screens/home_screen.dart';
 
 class CrearOrdenesScreen extends StatelessWidget {
   const CrearOrdenesScreen({super.key});
@@ -312,24 +313,16 @@ class CrearOrdenesScreen extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-
                       IconButton(
                         icon: const Icon(Icons.save, size: 50),
                         onPressed: () {
                           // Lógica para guardar
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const OrdenCreadaScreen()),
+                          );
                         },
                       ),
-
-                    IconButton(
-                      icon: const Icon(Icons.save, size: 50),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const OrdenCreadaScreen()),
-                        );
-                      },
-                    ),
-
                       const Text('Guardar'),
                     ],
                   ),
@@ -340,6 +333,14 @@ class CrearOrdenesScreen extends StatelessWidget {
                         onPressed: () {
                           // Lógica para cancelar
                           Navigator.pop(context);
+
+                          // Cambiar la lógica aquí
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => const HomeScreen()),
+                            (route) => false,
+                          );
+                          print('Cancelar');
                         },
                       ),
                       const Text('Cancelar'),
@@ -365,19 +366,19 @@ class CrearOrdenesScreen extends StatelessWidget {
     return TableRow(
       children: [
         Container(
-          color: const Color(0xFFD8B48C),
+          color: const Color(0xFFF7EAD7),
           padding: const EdgeInsets.all(8.0),
-          child: Text(item),
+          child: Text(item, textAlign: TextAlign.center),
         ),
         Container(
-          color: const Color(0xFFE6D3B1),
+          color: const Color(0xFFF7EAD7),
           padding: const EdgeInsets.all(8.0),
-          child: Text(cantidad),
+          child: Text(cantidad, textAlign: TextAlign.center),
         ),
         Container(
-          color: const Color(0xFFD8B48C),
+          color: const Color(0xFFF7EAD7),
           padding: const EdgeInsets.all(8.0),
-          child: Text(detalles),
+          child: Text(detalles, textAlign: TextAlign.center),
         ),
       ],
     );
