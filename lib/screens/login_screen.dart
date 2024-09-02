@@ -103,11 +103,15 @@ class LoginScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushReplacementNamed(context, 'home');
                         },
-                      )
+                      ),
+                      const SizedBox(height: 30),
+                      const Text(
+                        '2024 © Todos los derechos reservados Mercado High Services Srl',
+                        style: TextStyle(fontSize: 12),
+                      ),
                     ],
                   ),
                 ),
-
               ],
             ),
           ),

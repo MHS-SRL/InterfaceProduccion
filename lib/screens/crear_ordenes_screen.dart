@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'drawer_items.dart'; // Importa el archivo que contiene DrawerItems
-import '/screens/orden_creada_screen.dart';
+import 'drawer_items.dart'; 
 import '/screens/home_screen.dart';
 
 class CrearOrdenesScreen extends StatelessWidget {
@@ -15,8 +14,7 @@ class CrearOrdenesScreen extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: DrawerItems.getDrawerItems(
-              context), // Usa la función estática de DrawerItems
+          children: DrawerItems.getDrawerItems(context),
         ),
       ),
       body: SingleChildScrollView(
@@ -25,6 +23,7 @@ class CrearOrdenesScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Sección de cliente, tipo y estado
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -194,6 +193,7 @@ class CrearOrdenesScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
+              // Componente
               const Center(
                 child: Text(
                   'COMPONENTES',
@@ -254,97 +254,103 @@ class CrearOrdenesScreen extends StatelessWidget {
                   ),
                   _buildTableRow('Rodamiento', '25.00', 'Rodamiento 4262'),
                   _buildTableRow('Rodamiento', '25.00', 'Rodamiento 6003'),
-                  _buildTableRow('Rodamiento', '25.00', 'Rodamiento 6002'),
+                  _buildTableRow('Rodamiento', '25.00', 'Rodamiento 6002', isHighlighted: true), // Marca el cuarto elemento
                 ],
               ),
               const SizedBox(height: 20),
-              Row(
+              // Total de Cantidad
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-                      color: const Color(0xFFD8B48C),
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Text(
-                        'NOTA:',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                  Text(
+                    'Total Items:',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: const Color(0xFFD8B48C),
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Text(
-                        'TOTAL ITEMS',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: const Color(0xFFD8B48C),
-                      padding: const EdgeInsets.all(8.0),
-                      child: const Text(
-                        '75.00',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                  Text(
+                    '75.00',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 20),
+              // Sección de Notas
+              Container(
+                color: const Color(0xFFF7EAD7),
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'NOTA:',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Escribe una nota...',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              // Botones de Cancelar y Guardar
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.save, size: 50),
-                        onPressed: () {
-                          // Lógica para guardar
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const OrdenCreadaScreen()),
-                          );
-                        },
-                      ),
-                      const Text('Guardar'),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.cancel, size: 50),
-                        onPressed: () {
-                          // Lógica para cancelar
-                          Navigator.pop(context);
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.pop(context);
 
-                          // Cambiar la lógica aquí
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(builder: (context) => const HomeScreen()),
-                            (route) => false,
-                          );
-                          print('Cancelar');
-                        },
-                      ),
-                      const Text('Cancelar'),
-                    ],
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
+                        (route) => false,
+                      );
+                      print('Cancelar');
+                    },
+                    icon: const Icon(Icons.save), // Icono de guardar
+                    label: const Text('Guardar'),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.black, backgroundColor: Colors.white, // Color del texto negro
+                      side: const BorderSide(color: Colors.black), // Borde negro
+                    ),
+                  ),
+                  const SizedBox(width: 10), // Espacio entre botones
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.pop(context);
+
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
+                        (route) => false,
+                      );
+                      print('Cancelar');
+                    },
+                    icon: const Icon(Icons.cancel), // Icono de cancelar
+                    label: const Text('Cancelar'),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white, backgroundColor: Colors.black, // Color del texto blanco
+                    ),
                   ),
                 ],
               ),
@@ -362,23 +368,23 @@ class CrearOrdenesScreen extends StatelessWidget {
     );
   }
 
-  TableRow _buildTableRow(String item, String cantidad, String detalles) {
+  TableRow _buildTableRow(String item, String cantidad, String detalles, {bool isHighlighted = false}) {
     return TableRow(
       children: [
         Container(
-          color: const Color(0xFFF7EAD7),
+          color: isHighlighted ? Colors.white : const Color(0xFFD8B48C), // Fondo blanco solo para el cuarto rodamiento
           padding: const EdgeInsets.all(8.0),
-          child: Text(item, textAlign: TextAlign.center),
+          child: Text(item),
         ),
         Container(
-          color: const Color(0xFFF7EAD7),
+          color: const Color(0xFFE6D3B1), // Color de la columna 'CANTIDAD'
           padding: const EdgeInsets.all(8.0),
-          child: Text(cantidad, textAlign: TextAlign.center),
+          child: Text(cantidad),
         ),
         Container(
-          color: const Color(0xFFF7EAD7),
+          color: const Color(0xFFD8B48C), // Color de la columna 'DETALLES'
           padding: const EdgeInsets.all(8.0),
-          child: Text(detalles, textAlign: TextAlign.center),
+          child: Text(detalles),
         ),
       ],
     );

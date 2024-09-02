@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'drawer_items.dart';
 
 class VerOrdenesPendientesScreen extends StatelessWidget {
+  const VerOrdenesPendientesScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,7 +125,7 @@ class VerOrdenesPendientesScreen extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: VerOrdenesPendientesScreen(),
   ));
 }
